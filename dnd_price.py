@@ -5,7 +5,7 @@ from enum import Enum
 class User(Enum):
   AMAN = 'Aman'
   ADI = 'Adi'
-  JESS = 'Jess'
+  MESS = 'Mess'
   DONG = 'Dong'
   ESTELLE = 'Estelle'
 
@@ -19,7 +19,7 @@ total_due_by_user: Dict[User, Decimal] = {
   # 1x Mermaid Class Dice
   User.DONG: Decimal('11.95') + (normal_shipping_cost / number_of_people),
   # Purple and orange vapor dice
-  User.JESS: Decimal('9.95') + (normal_shipping_cost / number_of_people),
+  User.MESS: Decimal('9.95') + (normal_shipping_cost / number_of_people),
   # Black chrome metal dice with teal numbers
   User.ESTELLE: Decimal('34.95') + (normal_shipping_cost / number_of_people),
   # Black chrome metal dice with purple numbers
