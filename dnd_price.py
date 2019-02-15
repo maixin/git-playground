@@ -32,12 +32,14 @@ total_due_by_user: Dict[User, Decimal] = {
 total_due = sum(total_due_by_user.values())
 
 
-exchange_rate = Decimal('194.35') / Decimal(total_due)
+exchange_rate = Decimal('194.35') / total_due
 exchange_rate = exchange_rate.quantize(Decimal('0.01'), rounding=ROUND_HALF_UP)
-
 for user, total_due_by_user in total_due_by_user.items():
   final_amount = (total_due_by_user * exchange_rate).quantize(
     Decimal('0.01'),
     rounding=ROUND_HALF_UP,  
     )
   print(user.value, ' = ', final_amount)
+
+print('total due (USD):', total_due)
+print('total due (AUD):', total_due * exchange_rate)
